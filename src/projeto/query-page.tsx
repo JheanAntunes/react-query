@@ -5,8 +5,9 @@ import QueryPosts from './components/posts'
 import useQueryPage from './hooks/use-query-page'
 type QueryPageProps = {
   page?: string
+  searchFilter?: string
 }
-const QueryPage = ({ page }: QueryPageProps) => {
+const QueryPage = ({ page, searchFilter }: QueryPageProps) => {
   const {
     posts,
     totalPagination,
@@ -14,20 +15,22 @@ const QueryPage = ({ page }: QueryPageProps) => {
     handleChangePagination,
     error,
     isLoading
-  } = useQueryPage({ page })
+  } = useQueryPage({ page, searchFilter })
 
   //tratamento de requisição https
   if (error) console.log('QueryPost: ', error)
   if (isLoading) return <LoadingPost />
 
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-8">
       <QueryPosts posts={posts} />
-      <Pagination
-        total={totalPagination}
-        initialPage={currentPage}
-        onChange={handleChangePagination}
-      />
+      <div className="flex w-full items-center justify-center">
+        <Pagination
+          total={totalPagination}
+          initialPage={currentPage}
+          onChange={handleChangePagination}
+        />
+      </div>
     </div>
   )
 }
