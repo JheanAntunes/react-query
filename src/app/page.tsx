@@ -1,17 +1,20 @@
+import FormPost from '@/projeto/components/form-post'
 import QueryPage from '@/projeto/query-page'
 
 type SearchParams = {
-  search?: string
+  searchFilter?: string
+  searchPagination?: string
   [key: string]: string | string[] | undefined
 }
 type HomeProps = {
   searchParams: SearchParams
 }
 export default function Home({ searchParams }: HomeProps) {
-  const { search } = searchParams
+  const { searchPagination, searchFilter } = searchParams
   return (
-    <main className="mx-auto px-8">
-      <QueryPage page={search} />
+    <main className="mx-auto grid grid-cols-1 gap-8 p-8">
+      <FormPost />
+      <QueryPage page={searchPagination} searchFilter={searchFilter} />
     </main>
   )
 }
