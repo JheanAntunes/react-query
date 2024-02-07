@@ -1,13 +1,11 @@
 import useSearch from '@/components/hooks/use-search'
 
 const useHandlePagination = () => {
-  //handle searchParams url
-  const { params, pathname, replace } = useSearch()
+  //handler searchParams url
+  const { HandlerOfSearchParams } = useSearch()
 
   const handleChangePagination = (page: number) => {
-    // add searchParams -> search=page
-    params.set('search', page.toString())
-    replace(`${pathname}?${params.toString()}`)
+    HandlerOfSearchParams({ key: 'searchPagination', value: page.toString() })
   }
 
   return {
