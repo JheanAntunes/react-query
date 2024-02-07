@@ -7,7 +7,7 @@ type QueryPostsProps = {
 }
 const QueryPosts = ({ posts }: QueryPostsProps) => {
   return (
-    <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <section className="grid justify-center gap-8 md:grid-cols-2 md:justify-normal lg:grid-cols-3">
       {posts.map((post) => {
         return (
           <Fragment key={post.id + post.userId}>
