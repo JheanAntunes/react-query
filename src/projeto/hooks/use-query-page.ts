@@ -1,11 +1,13 @@
 import useQueryPosts from '@/components/hooks/use-query-posts'
+import { utilSearchFilter } from '../utils/search-filter'
 import utilPagination from '../utils/util-pagination'
 import useHandlePagination from './use-handle-pagination'
 
 type useQueryPageProps = {
   page?: string
+  searchFilter?: string
 }
-const useQueryPage = ({ page }: useQueryPageProps) => {
+const useQueryPage = ({ page, searchFilter }: useQueryPageProps) => {
   // Gerenciamento do state da paginação pela URL
   const { handleChangePagination } = useHandlePagination()
 
@@ -17,8 +19,13 @@ const useQueryPage = ({ page }: useQueryPageProps) => {
     data: dataPosts,
     page
   })
+
+  const data = searchFilter
+    ? utilSearchFilter({ data: posts, search: searchFilter })
+    : posts
+
   return {
-    posts,
+    posts: data,
     totalPagination,
     error,
     isLoading,
