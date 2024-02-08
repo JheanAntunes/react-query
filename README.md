@@ -1,3 +1,21 @@
+# Introdução :innocent:
+Site que mostra as postangens de uma [api externa](https://jsonplaceholder.typicode.com/) com pesquisa pelo título e paginação :astonished:
+## Tecnologias :sunglasses:
+- Next
+- Tailwind
+- nextUI [Site](https://nextui.org/)
+- tanstack/query [Docs](https://tanstack.com/query/latest/docs/framework/react/overview)
+### O que praticou da lib tanstack/Query :nerd_face: ?
+O fluxo da biblioteca tanstack/Query, aqui um [Diagrama Figma](https://www.figma.com/file/tKy6eBYXDvDKqZj2lS0c8r/Diagram-Basics-(Community)?type=whiteboard&node-id=0%3A1&t=VwjCQgIHdFtCAmcl-1) 💅, [video](https://www.youtube.com/watch?v=q8S7YHHaF-0) que explica com mais detalhes
+- Solicitações de dados com hook useQuery
+- configurações
+  - staleTime
+  - refetchOnWindowFocus
+- Mutações
+- Invalidar cache
+- Custom hooks 
+> Tem muitas coisas para aprender, mas não vou me aprofundar porque não tenho um projeto que necessita.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
