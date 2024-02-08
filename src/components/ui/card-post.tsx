@@ -30,7 +30,7 @@ export default function CardPost({ post }: CardPostProps) {
         <Link
           isExternal
           showAnchorIcon
-          href="https://github.com/nextui-org/nextui"
+          href="https://github.com/JheanAntunes/react-query"
         >
           Visit source code on GitHub.
         </Link>
